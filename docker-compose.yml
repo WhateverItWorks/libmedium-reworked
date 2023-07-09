@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+    libmedium:
+        build:
+          context: .
+          dockerfile: Dockerfile
+        container_name: libmedium
+        hostname: libmedium
+        restart: always
+        environment:
+            - RUST_BACKTRACE=full
+        ports:
+            - 8083:7000
+        volumes:
+            - ./config/default.toml:/etc/libmedium/config.toml
