@@ -45,5 +45,5 @@ jobs:
           GIT_HASH: 8e77345f1597e40c2e266cb4e6dee74888918a61
 
       - name: Upload to Codecov
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@v3
         if: github.ref == 'refs/heads/master'
