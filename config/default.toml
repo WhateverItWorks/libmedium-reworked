@@ -1,5 +1,5 @@
 debug = false
-source_code = "https://github.com/WhateverItWorks/my-libmedium-docker-compose/tree/main"
+source_code = "https://github.com/WhateverItWorks/my-libmedium-docker-compose"
 cache = "/var/lib/libmedium"
 
 [server]
