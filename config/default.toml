@@ -1,11 +1,11 @@
 debug = false
-source_code = "https://github.com/realaravinth/libmedium"
-#cache = "/var/lib/libmedium"
+source_code = "https://github.com/WhateverItWorks/my-libmedium-docker-compose/tree/main"
+cache = "/var/lib/libmedium"
 
 [server]
 port = 7000
 ip = "0.0.0.0" 
-domain = "change-to-your-domain"
-allow_registration = false
+domain = "md.whateveritworks.org"
+allow_registration = true
 proxy_has_tls = true
-workers = 4
+workers = 2
