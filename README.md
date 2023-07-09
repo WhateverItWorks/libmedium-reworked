@@ -18,7 +18,7 @@
 Usable. Should you run into a `HTTP 500 Internal Server Error`, please
 file a bug report with the URL of the post you were trying to read and
 the git commit hash of the build. Git commit hash can be obtained from
-[/api/v1/meta/build](https://libmedium.batsense.net/api/v1/meta/build).
+[/api/v1/meta/build](https://md.whateveritworks.org/api/v1/meta/build).
 
 This proxy works by interacting with Medium's undocumented(probably
 private but unauthenticated) API. So I've had to make assumptions and
@@ -58,48 +58,50 @@ business.
 | http://md.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion/ | N/A     | Hetzner           | [~vern](https://vern.cc)                 |
 | http://vernaqj2qr2pijpgvf3od6ssc3ulz3nv52gwr3hba5l6humuzmgq.b32.i2p/      | N/A     | Hetzner           | [~vern](https://vern.cc)                 |
 | https://medium.hostux.net                                                 | France  | Gandi             | [hostux](https://hostux.net)             |
-| https://md.xbdm.fun                                                       | Germany | Hetzner           | Hosted by [xbdm](https://www.xbdm.fun)   |
-| https://libmedium.fascinated.cc                                           | Germany | Behind Cloudflare | @RealFascinated                          |
+| https://md.whateveritworks.org                                            | Germany | Hetzner           | Hosted by [xbdm](https://xbdm.fun)       |
 
-## Deploy with Docker
 
-1. Grab [`./config/default.toml`](./config/default.toml) and make
-   necessary changes
-
-2. AMD64 pre-compiled images are available on DockerHub.
-
+### Automatic Installs
 ```
-docker run -d \
-  -v ./config/default.toml:/etc/libmedium/config.toml \
-  -p 8082:7000 \
-  --restart always \
-  --name libmedium \
-  realaravinth/libmedium
+https://github.com/WhateverItWorks/Watchtower
 ```
 
-If you are on a different architecture, run make docker and then run the
-above command.
+### €⁠20 [Hetzner Cloud](https://hetzner.cloud/?ref=eLtKhFK70n4h)
+
+### Deploy with Docker
 
 ```
-make docker
+apt install git
+git clone https://github.com/WhateverItWorks/my-libmedium-docker-compose.git md
+cd md
+nano default.toml
+nano docker-compose.yml
+docker-compose pull
+docker-compose up -d
+```
+http://localhost:8080
+
+
+### Deploy with Dockerfile
+```
+docker-compose up -d --build
 ```
 
-## Deploy with Docker-Compose
+## Security Audits:
 
-1. apt install git
-
-2. git clone https://github.com/realaravinth/libmedium.git medium
-
-3. nano `config/default.toml`
-
-4. nano `docker-compose.yml`
-
-5. docker-compose up -d
-
-```
-Go to your website: http://localhost:8082
-```
-
----
+- [Internet.nl](https://internet.nl/site/md.whateveritworks.org/)
+- [HSTS Preload](https://hstspreload.org/)
+- [SSL Labs](https://www.ssllabs.com/ssltest/analyze.html?d=md.whateveritworks.org)
+- [Security Headers](https://securityheaders.com/?q=md.whateveritworks.org&hide=on&followRedirects=on)
+- [pagespeed](https://pagespeed.web.dev/)
+- [webbkoll](https://webbkoll.dataskydd.net/en)
+- [ImmuniWeb](https://www.immuniweb.com/ssl/md.whateveritworks.org)
+- [Hardenize](https://www.hardenize.com/report/md.whateveritworks.org/)
+- [Mozilla.org](https://observatory.mozilla.org/)
+- [report-uri.com](https://report-uri.com/home/tools)
+- [check-your-website.server-daten.de](https://check-your-website.server-daten.de/?q=md.whateveritworks.org)
+- [csp-evaluator.withgoogle.com](https://csp-evaluator.withgoogle.com/)
+- [OpenWPM](https://github.com/openwpm/OpenWPM)
+- [privacyscore.org](https://privacyscore.org)
 
 Inspired by [Scribe - An Alternative Medium Frontend](https://sr.ht/~edwardloveall/scribe)
