@@ -58,7 +58,6 @@ business.
 | http://md.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion/ | N/A     | Hetzner           | [~vern](https://vern.cc)                 |
 | http://vernaqj2qr2pijpgvf3od6ssc3ulz3nv52gwr3hba5l6humuzmgq.b32.i2p/      | N/A     | Hetzner           | [~vern](https://vern.cc)                 |
 | https://medium.hostux.net                                                 | France  | Gandi             | [hostux](https://hostux.net)             |
-| https://md.whateveritworks.org                                            | Germany | Hetzner           | Hosted by [xbdm](https://xbdm.fun)       |
 
 
 ### Automatic Installs
@@ -74,7 +73,7 @@ https://github.com/WhateverItWorks/Watchtower
 apt install git
 git clone https://github.com/WhateverItWorks/my-libmedium-docker-compose.git md
 cd md
-nano default.toml
+nano config/default.toml
 nano docker-compose.yml
 docker-compose pull
 docker-compose up -d
